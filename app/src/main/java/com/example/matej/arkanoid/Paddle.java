@@ -37,6 +37,10 @@ public class Paddle {
         return this.paddle;
     }
 
+    public void setMoving(int moving){
+        this.moving = moving;
+    }
+
     public void update(long fps){
         if(moving > (screenX/2)){
             positionX = positionX - (speed / fps);
