@@ -90,6 +90,7 @@ public class MainActivity extends Activity {
 
         public void update(){
             paddle.update(fps);
+            ball.update(fps);
         }
 
         public void draw(){
@@ -100,7 +101,7 @@ public class MainActivity extends Activity {
 
                 paintWhite.setColor(Color.WHITE);
                 canvas.drawRect(paddle.getPaddle(),paintWhite);
-                canvas.drawCircle(ball.getPositionX(),ball.getPositionY(),ball.getRadius(),paintWhite);
+                canvas.drawRect(ball.getBall(),paintWhite);
 
                 surfHolder.unlockCanvasAndPost(canvas);
             }
