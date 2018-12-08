@@ -2,6 +2,7 @@ package com.example.matej.arkanoid;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
@@ -59,7 +60,7 @@ public class MainActivity extends Activity {
 
 
         //skore a zivoty
-        private int lives = 3;
+        private int lives = 1;
         private int score = 0;
 
         //Kostky
@@ -166,10 +167,13 @@ public class MainActivity extends Activity {
                 paddle.reset(screenX,screenY);
                 ballStopped = true;
 
-                if(lives > 0){
+                if(lives < 0){
                     pause = true;
                     ballStopped = true;
-                    createAndRestart();
+                    String value = Integer.toString(score);
+                    Intent intent = new Intent(getContext(), LostSceen.class);
+                    intent.putExtra("score", value);
+                    startActivity(intent);
                 }
 
             }

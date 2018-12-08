@@ -37,4 +37,9 @@ public class MainMenu extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void leaderB(View view){
+        Intent intent = new Intent(this, Leaderboards.class);
+        startActivity(intent);
+    }
 }
