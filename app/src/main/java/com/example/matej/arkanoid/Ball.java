@@ -19,17 +19,17 @@ public class Ball {
         xVelocity = 200;
         yVelocity = -400;
 
-        ballHeight = 10;
-        ballWidth = 10;
+        ballHeight = 15;
+        ballWidth = 15;
 
         positionX =screenX/2;
-        positionY = screenY - 60;
+        positionY = screenY - 80;
 
-        ball = new RectF(positionX,positionY, ballHeight, ballWidth);
+        ball = new RectF(positionX,positionY, positionX+ballHeight, positionY+ballWidth);
     }
 
     public RectF getBall(){
-        return ball;
+        return this.ball;
     }
 
     public void update(float fps){

@@ -57,5 +57,13 @@ public class Paddle {
         paddle.right = positionX + length;
     }
 
+    public void reset(int x, int y){
+        paddle.left = (x/2)-100;
+        paddle.top = y - 35;
+        paddle.right = (x/2)-100+length;
+        paddle.bottom = y - 35+height;
+    }
+
+
 
 }
