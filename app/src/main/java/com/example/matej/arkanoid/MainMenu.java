@@ -29,7 +29,10 @@ public class MainMenu extends Activity {
     }
 
     public void exitApp(View view) {
-        finish();
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+        homeIntent.addCategory( Intent.CATEGORY_HOME );
+        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(homeIntent);
         System.exit(0);
     }
 
